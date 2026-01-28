@@ -3,7 +3,7 @@
   Author: You
 --]]
 
-local repo = "https://raw.githubusercontent.com/Silver-hub/REPO/main/"
+local repo = "https://raw.githubusercontent.com/Silver-hub/amabar49-boop/main/"
 
 local function load(file)
     local success, err = pcall(function()
