@@ -1,4 +1,6 @@
-print("Main GUI Loaded")
+print("[Silver Hub] Main Loaded")
 
--- contoh load module lain
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amabar49-boop/Silver-hub/main/Loader.lua"))()
+-- load fitur
+loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/amabar49-boop/Silver-hub/main/Autopickaxe.lua"
+))()
