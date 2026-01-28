@@ -1,26 +1,24 @@
---[[ 
-  Simple Loader
-  Author: You
---]]
+-- Silver Hub Loader
+-- Repo: amabar49-boop / Silver-hub
 
-local repo = "https://raw.githubusercontent.com/amabar49-boop/Silver-hub/main/"
+local BASE_URL = "https://raw.githubusercontent.com/amabar49-boop/Silver-hub/main/"
 
-local function load(file)
+-- Anti double execute
+if getgenv()._SILVER_HUB_LOADED then
+    return
+end
+getgenv()._SILVER_HUB_LOADED = true
+
+local function loadFile(file)
     local success, err = pcall(function()
-        loadstring(game:HttpGet(repo .. file))()
+        loadstring(game:HttpGet(BASE_URL .. file))()
     end)
 
     if not success then
-        warn("Failed to load:", file)
+        warn("[Silver Hub] Gagal load:", file)
         warn(err)
     end
 end
 
--- Anti double execute
-if getgenv()._MY_HUB_LOADED then
-    return
-end
-getgenv()._MY_HUB_LOADED = true
-
--- Load main GUI
-load("main.lua")
+-- Load Main GUI
+loadFile("Main.lua")
